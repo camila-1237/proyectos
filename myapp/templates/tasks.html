@@ -1,0 +1,23 @@
+<h1>Tasks</h1>
+<nav> 
+    <ul> 
+        <li> 
+            <a href="/">Home</a>
+        </li>
+        <li> 
+            <a href="/projects">project</a>
+        </li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+{% for task in tasks  %}
+
+<article> 
+    <h2> Task:{{ task.title }} 🕑 {%if task.done == False%} {%else%} ✅{% endif %}</h2>
+    <h3>project:{{ task.project.name }} </h3>
+    <p>Description: {{ task.description }}</p>
+</article>
+
+ {% endfor %}
+ 
